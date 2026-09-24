@@ -3,1256 +3,283 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>VOLT FITNESS</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>Gaming Demo</title>
 
 <style>
-
-/* ================================
-   RESET
-================================ */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
+    font-family:Arial,sans-serif;
 }
 
 body{
-    background:#08090b;
+    background:#140606;
     color:#fff;
-    font-family:'Barlow Condensed',sans-serif;
-    overflow-x:hidden;
 }
 
-/* ================================
-   VARIABLES
-================================ */
-
-:root{
-    --lime:#d7ff00;
-    --orange:#ff6a00;
-    --dark:#08090b;
-    --panel:#111316;
-    --gray:#85888d;
+.container{
+    display:flex;
+    min-height:100vh;
 }
 
-/* ================================
-   TOP LIGHT
-================================ */
-
-body::before{
-    content:"";
-
-    position:fixed;
-
-    width:600px;
-    height:600px;
-
-    top:-350px;
-    left:30%;
-
-    background:var(--lime);
-
-    filter:blur(220px);
-
-    opacity:.07;
-
-    pointer-events:none;
+.demo{
+    width:70%;
+    background:#111;
 }
 
-/* ================================
-   NAV
-================================ */
-
-header{
-    position:fixed;
-
-    top:0;
-    left:0;
-
+iframe{
     width:100%;
+    height:100vh;
+    border:none;
+}
 
-    z-index:100;
+.right{
+    width:30%;
+    padding:30px 22px;
+    background:linear-gradient(180deg,#2b0000,#0d0000);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
 
+.box{
+    width:100%;
+    background:#0b0b0b;
+    border:1px solid #ff2d2d;
+    border-radius:22px;
+    padding:26px 20px;
+    text-align:center;
+    box-shadow:0 0 30px rgba(255,0,0,.35);
+}
+
+.badge{
+    display:inline-block;
+    background:#ff2d2d;
+    color:#fff;
+    padding:10px 22px;
+    border-radius:30px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+h1{
+    color:#ff4040;
+    font-size:36px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.sub{
+    color:#ddd;
+    line-height:1.6;
+    margin-bottom:24px;
+    font-size:17px;
+}
+
+.features{
+    display:grid;
+    gap:14px;
+    margin:24px 0;
+}
+
+.feature{
+    background:linear-gradient(90deg,#1b1b1b,#3b0000);
+    border:1px solid rgba(255,50,50,.6);
+    border-radius:14px;
+    padding:15px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.feature span{
+    color:#ff4d4d;
+}
+
+.website-row{
     display:flex;
     justify-content:space-between;
-    align-items:center;
-
-    padding:22px 6%;
-
-    background:rgba(8,9,11,.75);
-
-    backdrop-filter:blur(18px);
-
-    border-bottom:1px solid rgba(255,255,255,.07);
-}
-
-.logo{
-    font-size:28px;
-
-    font-weight:900;
-
-    letter-spacing:-1px;
-}
-
-.logo span{
-    color:var(--lime);
-}
-
-nav{
-    display:flex;
-    gap:35px;
-}
-
-nav a{
-    color:#aaa;
-
-    text-decoration:none;
-
-    font-size:14px;
-
-    transition:.3s;
-}
-
-nav a:hover{
-    color:var(--lime);
-}
-
-.menu{
-    border:1px solid #444;
-
-    padding:11px 20px;
-
-    color:white;
-
-    text-decoration:none;
-
-    font-size:12px;
-
-    transition:.3s;
-}
-
-.menu:hover{
-    background:var(--lime);
-    color:#000;
-}
-
-/* ================================
-   HERO
-================================ */
-
-.hero{
-    min-height:100vh;
-
-    padding:150px 6% 80px;
-
-    display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    align-items:center;
-
-    gap:60px;
-}
-
-/* LEFT */
-
-.hero-small{
-    color:var(--lime);
-
-    font-size:14px;
-
-    letter-spacing:4px;
-
-    margin-bottom:20px;
-}
-
-.hero h1{
-    font-size:clamp(70px,10vw,150px);
-
-    line-height:.78;
-
-    font-weight:900;
-
-    text-transform:uppercase;
-
-    letter-spacing:-5px;
-}
-
-.hero h1 span{
-    color:transparent;
-
-    -webkit-text-stroke:2px white;
-}
-
-.hero-text{
-    max-width:520px;
-
-    color:#888;
-
-    font-family:Arial,sans-serif;
-
-    line-height:1.7;
-
-    margin:30px 0;
-}
-
-.hero-buttons{
-    display:flex;
-
-    gap:15px;
-
+    margin-top:18px;
+    font-weight:bold;
+    gap:10px;
     flex-wrap:wrap;
 }
 
-.btn{
-    padding:16px 28px;
-
+.website-row a{
     text-decoration:none;
-
-    font-weight:bold;
-
-    font-size:13px;
 }
 
-.btn-main{
-    background:var(--lime);
-
-    color:#000;
-
-    box-shadow:
-        7px 7px 0 #738800;
-
-    transition:.2s;
+.website{
+    color:#25D366;
 }
 
-.btn-main:hover{
-    transform:translate(4px,4px);
-
-    box-shadow:
-        3px 3px 0 #738800;
+.whatsapp-small{
+    color:#ff4d4d;
 }
-
-.btn-outline{
-    color:white;
-
-    border:1px solid #555;
-}
-
-/* ================================
-   HERO VISUAL
-================================ */
-
-.visual{
-    position:relative;
-
-    height:600px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    perspective:1200px;
-}
-
-.glow{
-    position:absolute;
-
-    width:380px;
-    height:380px;
-
-    border-radius:50%;
-
-    background:var(--lime);
-
-    filter:blur(100px);
-
-    opacity:.12;
-}
-
-.person{
-    width:300px;
-    height:500px;
-
-    position:relative;
-
-    transform:
-        perspective(800px)
-        rotateY(-18deg)
-        rotateX(5deg);
-
-    transform-style:preserve-3d;
-}
-
-/* abstract athletic figure */
-
-.head{
-    position:absolute;
-
-    width:75px;
-    height:75px;
-
-    border-radius:50%;
-
-    background:
-        linear-gradient(135deg,#777,#18191b);
-
-    top:20px;
-    left:112px;
-
-    box-shadow:
-        20px 15px 30px rgba(0,0,0,.7);
-}
-
-.body{
-    position:absolute;
-
-    width:150px;
-    height:230px;
-
-    left:75px;
-    top:90px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #303236,
-            #090a0b
-        );
-
-    clip-path:
-        polygon(
-            20% 0,
-            80% 0,
-            100% 100%,
-            0 100%
-        );
-
-    box-shadow:
-        inset -20px 0 30px rgba(0,0,0,.5);
-}
-
-.arm{
-    position:absolute;
-
-    width:48px;
-    height:210px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #282a2d,
-            #08090a
-        );
-
-    border-radius:30px;
-
-    top:100px;
-}
-
-.arm.left{
-    left:30px;
-
-    transform:
-        rotate(18deg);
-}
-
-.arm.right{
-    right:30px;
-
-    transform:
-        rotate(-18deg);
-}
-
-.leg{
-    position:absolute;
-
-    width:65px;
-    height:260px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #242629,
-            #070809
-        );
-
-    top:290px;
-
-    border-radius:25px;
-}
-
-.leg.left{
-    left:82px;
-
-    transform:rotate(5deg);
-}
-
-.leg.right{
-    right:82px;
-
-    transform:rotate(-5deg);
-}
-
-/* floating info */
-
-.info{
-    position:absolute;
-
-    padding:15px 20px;
-
-    background:
-        rgba(20,22,24,.8);
-
-    border:1px solid rgba(215,255,0,.35);
-
-    backdrop-filter:blur(15px);
-
-    box-shadow:
-        0 20px 40px rgba(0,0,0,.5);
-
-    animation:float 4s ease-in-out infinite;
-}
-
-.info strong{
-    display:block;
-
-    color:var(--lime);
-
-    font-size:25px;
-}
-
-.info small{
-    color:#888;
-
-    font-family:Arial,sans-serif;
-}
-
-.info.one{
-    top:100px;
-    right:20px;
-}
-
-.info.two{
-    bottom:130px;
-    left:10px;
-
-    animation-delay:1s;
-}
-
-@keyframes float{
-
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-18px);
-    }
-
-}
-
-/* ================================
-   TICKER
-================================ */
-
-.ticker{
-    background:var(--lime);
-
-    color:#000;
-
-    overflow:hidden;
-
-    white-space:nowrap;
-
-    padding:15px 0;
-
-    font-size:18px;
-
-    font-weight:900;
-}
-
-.ticker-track{
-    display:inline-block;
-
-    animation:
-        ticker 20s linear infinite;
-}
-
-@keyframes ticker{
-
-    from{
-        transform:translateX(0);
-    }
-
-    to{
-        transform:translateX(-50%);
-    }
-
-}
-
-/* ================================
-   SECTION
-================================ */
-
-.section{
-    padding:120px 6%;
-}
-
-.section-top{
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:end;
-
-    margin-bottom:50px;
-}
-
-.label{
-    color:var(--lime);
-
-    font-size:13px;
-
-    letter-spacing:4px;
-}
-
-.title{
-    font-size:clamp(45px,6vw,80px);
-
-    line-height:.85;
-
-    text-transform:uppercase;
-}
-
-/* ================================
-   WORKOUT CARDS
-================================ */
-
-.workouts{
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:20px;
-}
-
-.workout{
-    height:430px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:#121417;
-
-    border:1px solid #25282c;
-
-    transition:.5s;
-}
-
-.workout:hover{
-    transform:
-        translateY(-12px)
-        rotateX(3deg)
-        rotateY(-3deg);
-
-    border-color:var(--lime);
-}
-
-.workout-image{
-    position:absolute;
-
-    inset:0;
-
-    background-size:cover;
-
-    background-position:center;
-
-    transition:.6s;
-}
-
-.workout:hover .workout-image{
-    transform:scale(1.08);
-}
-
-.workout:nth-child(1)
-.workout-image{
-    background-image:
-        linear-gradient(
-            transparent,
-            #08090b
-        ),
-        url("https://images.unsplash.com/photo-1583454110551-21f2fa2afe61");
-}
-
-.workout:nth-child(2)
-.workout-image{
-    background-image:
-        linear-gradient(
-            transparent,
-            #08090b
-        ),
-        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48");
-}
-
-.workout:nth-child(3)
-.workout-image{
-    background-image:
-        linear-gradient(
-            transparent,
-            #08090b
-        ),
-        url("https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b");
-}
-
-.workout-info{
-    position:absolute;
-
-    bottom:0;
-
-    padding:30px;
-
-    z-index:2;
-}
-
-.workout-number{
-    color:var(--lime);
-
-    font-size:13px;
-}
-
-.workout h3{
-    font-size:40px;
-
-    text-transform:uppercase;
-
-    margin:8px 0;
-}
-
-.workout p{
-    color:#aaa;
-
-    font-family:Arial,sans-serif;
-
-    line-height:1.5;
-
-    font-size:14px;
-}
-
-/* ================================
-   MEMBERSHIP
-================================ */
-
-.membership-section{
-    background:#0d0f11;
-}
-
-.memberships{
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:20px;
-}
-
-.membership{
-    padding:45px 35px;
-
-    border:1px solid #292c30;
-
-    background:#111316;
-
-    position:relative;
-
-    transition:.4s;
-}
-
-.membership:hover{
-    transform:translateY(-10px);
-}
-
-.membership.hot{
-    border:2px solid var(--lime);
-}
-
-.popular{
-    position:absolute;
-
-    top:0;
-    right:0;
-
-    background:var(--lime);
-
-    color:#000;
-
-    padding:8px 15px;
-
-    font-size:10px;
-
-    font-weight:bold;
-}
-
-.membership h3{
-    font-size:25px;
-}
-
-.price{
-    font-size:65px;
-
-    font-weight:900;
-
-    margin:25px 0;
-}
-
-.price span{
-    font-size:14px;
-
-    color:#777;
-}
-
-.membership ul{
-    list-style:none;
-
-    margin-bottom:30px;
-}
-
-.membership li{
-    color:#888;
-
-    font-family:Arial,sans-serif;
-
-    padding:12px 0;
-
-    border-bottom:1px solid #222;
-}
-
-.membership li::before{
-    content:"✓";
-
-    color:var(--lime);
-
-    margin-right:10px;
-}
-
-.plan-btn{
-    display:block;
-
-    text-align:center;
-
-    padding:15px;
-
-    border:1px solid #555;
-
-    color:white;
-
-    text-decoration:none;
-
-    transition:.3s;
-}
-
-.hot .plan-btn,
-.plan-btn:hover{
-    background:var(--lime);
-
-    border-color:var(--lime);
-
-    color:#000;
-}
-
-/* ================================
-   BIG CTA
-================================ */
 
 .cta{
-    padding:150px 6%;
-
-    text-align:center;
+    display:block;
+    margin-top:24px;
+    background:#25D366;
+    color:#fff;
+    text-decoration:none;
+    padding:18px;
+    border-radius:15px;
+    font-size:22px;
+    font-weight:bold;
+    transition:.3s;
+    box-shadow:0 0 18px rgba(37,211,102,.4);
 }
 
-.cta h2{
-    font-size:clamp(55px,10vw,140px);
-
-    line-height:.8;
-
-    text-transform:uppercase;
+.cta:hover{
+    background:#1ebe5d;
+    transform:scale(1.03);
 }
 
-.cta h2 span{
-    color:var(--lime);
-}
-
-.cta p{
-    color:#777;
-
-    max-width:500px;
-
-    margin:35px auto;
-
-    font-family:Arial,sans-serif;
-
+.trust{
+    margin-top:18px;
+    color:#ccc;
     line-height:1.7;
 }
 
-/* ================================
-   FOOTER
-================================ */
-
-footer{
-    padding:35px 6%;
-
-    border-top:1px solid #222;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    color:#555;
-
+.footer{
+    margin-top:20px;
+    color:#888;
     font-size:12px;
 }
 
-/* ================================
-   RESPONSIVE
-================================ */
+/* MOBILE */
+@media (max-width:768px){
 
-@media(max-width:900px){
-
-    nav{
-        display:none;
-    }
-
-    .hero{
-        grid-template-columns:1fr;
-
-        text-align:center;
-    }
-
-    .hero-text{
-        margin:auto;
-    }
-
-    .hero-buttons{
-        justify-content:center;
-    }
-
-    .visual{
-        height:500px;
-    }
-
-    .workouts,
-    .memberships{
-        grid-template-columns:1fr;
-    }
-
-    .section-top{
-        display:block;
-    }
-
-    .label{
-        margin-bottom:20px;
-    }
-
-    footer{
-        flex-direction:column;
-
-        gap:15px;
-
-        text-align:center;
-    }
-
+.container{
+    flex-direction:column-reverse; /* Contact first, Demo below */
 }
 
+.demo,
+.right{
+    width:100%;
+}
+
+iframe{
+    height:500px;
+}
+
+.right{
+    padding:20px;
+}
+
+h1{
+    font-size:28px;
+}
+
+.sub{
+    font-size:16px;
+}
+
+.feature{
+    font-size:16px;
+}
+
+.cta{
+    font-size:20px;
+    padding:16px;
+}
+
+.website-row{
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+}
+
+}
 </style>
+
 </head>
 
 <body>
 
+<div class="container">
 
-<!-- ================================
-     NAVIGATION
-================================ -->
-
-<header>
-
-    <div class="logo">
-        VOLT<span>.</span>
+    <!-- Demo Section -->
+    <div class="demo">
+        <iframe src="https://www.iceexchange.in/"></iframe>
     </div>
 
-    <nav>
-        <a href="#home">HOME</a>
-        <a href="#workouts">WORKOUTS</a>
-        <a href="#plans">MEMBERSHIP</a>
-        <a href="#contact">CONTACT</a>
-    </nav>
+    <!-- Contact Section -->
+    <div class="right">
 
-    <a href="#plans" class="menu">
-        JOIN VOLT
-    </a>
+        <div class="box">
 
-</header>
+            <div class="badge">
+                VIP Manual ID Available
+            </div>
 
+            <h1>GET YOUR ID NOW</h1>
 
-<!-- ================================
-     HERO
-================================ -->
+            <p class="sub">
+                Fast manual ID service with easy deposit support.
+                New users can start quickly through WhatsApp.
+            </p>
 
-<section class="hero" id="home">
+            <div class="features">
 
-    <div>
+                <div class="feature">
+                    Minimum Deposit:
+                    <span>₹100 Only</span>
+                </div>
 
-        <div class="hero-small">
-            PERFORMANCE / POWER / PROGRESS
-        </div>
+                <div class="feature">
+                    Welcome Bonus:
+                    <span>10%</span>
+                </div>
 
-        <h1>
-            TRAIN<br>
-            <span>HARDER.</span><br>
-            LIVE<br>
-            STRONGER.
-        </h1>
+                <div class="feature">
+                    Manual ID Support:
+                    <span>WhatsApp Only</span>
+                </div>
 
-        <p class="hero-text">
-            VOLT is a next-generation fitness club built
-            for people who want more from their training.
-            Elite equipment. Expert coaching. Zero excuses.
-        </p>
+                <div class="feature">
+                    Quick Help:
+                    <span>Deposit &amp; Withdrawal Support</span>
+                </div>
 
-        <div class="hero-buttons">
+            </div>
 
-            <a href="#plans" class="btn btn-main">
-                START NOW →
+            <div class="website-row">
+
+                <a class="website" href="https://www.iceexchange.in" target="_blank">
+                    🌐 www.iceexchange.in
+                </a>
+
+                <a class="whatsapp-small"
+                   href="https://wa.me/+447599256816
+                   target="_blank">
+                    💬 WhatsApp
+                </a>
+
+            </div>
+
+            <a class="cta"
+               href="https://wa.me/+447599256816?text=Hello%20I%20want%20new%20manual%20ID"
+               target="_blank">
+                📲 WhatsApp Now
             </a>
 
-            <a href="#workouts" class="btn btn-outline">
-                EXPLORE TRAINING
-            </a>
+            <div class="trust">
+                ✅ Trusted Manual Support<br>
+                ✅ Simple Process<br>
+                ✅ Fast Response
+            </div>
+
+            <div class="footer">
+                18+ Only | Play Responsibly | Follow Your Local Laws | T&amp;C Apply
+            </div>
 
         </div>
-
-    </div>
-
-
-    <!-- 3D ATHLETE -->
-
-    <div class="visual">
-
-        <div class="glow"></div>
-
-        <div class="person">
-
-            <div class="head"></div>
-
-            <div class="body"></div>
-
-            <div class="arm left"></div>
-            <div class="arm right"></div>
-
-            <div class="leg left"></div>
-            <div class="leg right"></div>
-
-        </div>
-
-
-        <div class="info one">
-
-            <strong>98%</strong>
-
-            <small>Performance</small>
-
-        </div>
-
-
-        <div class="info two">
-
-            <strong>24/7</strong>
-
-            <small>Gym Access</small>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================================
-     TICKER
-================================ -->
-
-<div class="ticker">
-
-    <div class="ticker-track">
-
-        BUILD STRENGTH ✦ BUILD CONFIDENCE ✦
-        BUILD DISCIPLINE ✦ BUILD STRENGTH ✦
-        BUILD CONFIDENCE ✦ BUILD DISCIPLINE ✦
-        BUILD STRENGTH ✦ BUILD CONFIDENCE ✦
-        BUILD DISCIPLINE ✦
 
     </div>
 
 </div>
-
-
-<!-- ================================
-     WORKOUTS
-================================ -->
-
-<section class="section" id="workouts">
-
-    <div class="section-top">
-
-        <div>
-            <div class="label">
-                TRAINING SYSTEM
-            </div>
-        </div>
-
-        <h2 class="title">
-            FIND<br>YOUR MODE
-        </h2>
-
-    </div>
-
-
-    <div class="workouts">
-
-
-        <div class="workout">
-
-            <div class="workout-image"></div>
-
-            <div class="workout-info">
-
-                <div class="workout-number">
-                    01 / STRENGTH
-                </div>
-
-                <h3>
-                    POWER
-                </h3>
-
-                <p>
-                    Progressive strength training designed
-                    to build real power.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="workout">
-
-            <div class="workout-image"></div>
-
-            <div class="workout-info">
-
-                <div class="workout-number">
-                    02 / CONDITIONING
-                </div>
-
-                <h3>
-                    HIIT
-                </h3>
-
-                <p>
-                    Fast-paced sessions that push your
-                    endurance and conditioning.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="workout">
-
-            <div class="workout-image"></div>
-
-            <div class="workout-info">
-
-                <div class="workout-number">
-                    03 / PHYSIQUE
-                </div>
-
-                <h3>
-                    SCULPT
-                </h3>
-
-                <p>
-                    Build muscle and shape your physique
-                    with focused training.
-                </p>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- ================================
-     MEMBERSHIP
-================================ -->
-
-<section class="section membership-section" id="plans">
-
-    <div class="section-top">
-
-        <div class="label">
-            MEMBERSHIP
-        </div>
-
-        <h2 class="title">
-            PICK<br>YOUR PLAN
-        </h2>
-
-    </div>
-
-
-    <div class="memberships">
-
-
-        <div class="membership">
-
-            <h3>BASE</h3>
-
-            <div class="price">
-                $29
-                <span>/MO</span>
-            </div>
-
-            <ul>
-                <li>Gym Access</li>
-                <li>Locker Room</li>
-                <li>Fitness Assessment</li>
-                <li>Mobile App</li>
-            </ul>
-
-            <a href="#contact" class="plan-btn">
-                SELECT PLAN
-            </a>
-
-        </div>
-
-
-        <div class="membership hot">
-
-            <div class="popular">
-                MOST POPULAR
-            </div>
-
-            <h3>PRO</h3>
-
-            <div class="price">
-                $59
-                <span>/MO</span>
-            </div>
-
-            <ul>
-                <li>24/7 Gym Access</li>
-                <li>All Classes</li>
-                <li>Personal Training</li>
-                <li>Nutrition Support</li>
-            </ul>
-
-            <a href="#contact" class="plan-btn">
-                SELECT PLAN
-            </a>
-
-        </div>
-
-
-        <div class="membership">
-
-            <h3>ELITE</h3>
-
-            <div class="price">
-                $99
-                <span>/MO</span>
-            </div>
-
-            <ul>
-                <li>Unlimited Access</li>
-                <li>Unlimited Classes</li>
-                <li>Weekly Coaching</li>
-                <li>Custom Nutrition</li>
-            </ul>
-
-            <a href="#contact" class="plan-btn">
-                SELECT PLAN
-            </a>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- ================================
-     CTA
-================================ -->
-
-<section class="cta" id="contact">
-
-    <h2>
-        NO MORE<br>
-        <span>EXCUSES.</span>
-    </h2>
-
-    <p>
-        Your next level is waiting.
-        Step inside VOLT and start building
-        a stronger version of yourself.
-    </p>
-
-    <a href="mailto:hello@voltfitness.com"
-       class="btn btn-main">
-
-        JOIN VOLT →
-
-    </a>
-
-</section>
-
-
-<!-- ================================
-     FOOTER
-================================ -->
-
-<footer>
-
-    <div>
-        © 2026 VOLT FITNESS
-    </div>
-
-    <div>
-        POWER / DISCIPLINE / PROGRESS
-    </div>
-
-</footer>
-
 
 </body>
 </html>
